@@ -5,15 +5,14 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 5
+    cooldown:
+      default-days: 3
     labels:
       - "dependencies"
     groups:
       github-actions:
         patterns:
           - "*"
-    cooldown:
-      default-days: 7
 
   - package-ecosystem: "npm"
     directories:
@@ -21,15 +20,14 @@ updates:
       - "/*"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 5
+    cooldown:
+      default-days: 3
     labels:
       - "dependencies"
     groups:
       npm:
         patterns:
           - "*"
-    cooldown:
-      default-days: 7
     ignore:
       # ignore to keep in sync with node24 used by GH runners
       - dependency-name: "@types/node"
