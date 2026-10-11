@@ -26,14 +26,14 @@ jobs:
           persist-credentials: false
 
       - name: Ensure workflow actions use immutable refs
-        uses: joshjohanning/ensure-immutable-actions@95f404c7ba212d486ec843666f0ffbd080959f63 # v2.7.1
+        uses: joshjohanning/ensure-immutable-actions@aaa3ba61b950ead2be895ea36a561a5eb11dd82b # v2.7.2
         with:
           include-first-party: "true"
           exclude-workflows: ".github/workflows/manual-run_scan.yml,test_scenario-executor.yml,test_scenario-executor-matrix.yml,test_scenario-graph-matrix.yml"
           write-job-summary: ${{ inputs.write-job-summary || 'on-failure-only' }}
 
       - name: Set up Node.js
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: "24"
           cache: npm
